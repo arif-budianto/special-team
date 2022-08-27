@@ -19,10 +19,14 @@ header {
 
 .logo {
     margin-right: auto;
-    margin-left: 10px;
+    margin-left: 25px;
     cursor: pointer;
     transition: all .5s ease 0s;
 }
+
+    .logo > img {
+        width: 75px;
+    }
 
     .logo:hover {
         color: yellow;
@@ -68,10 +72,10 @@ a {
     transition: all .5s ease 0s;
 }
 
-.tombol-btn:hover {
-    background: rgb(209, 207, 207);
-    color: rgb(252, 68, 44);
-}
+    .tombol-btn:hover {
+        background: rgb(209, 207, 207);
+        color: rgb(252, 68, 44);
+    }
 
 /* Bagian Isi */
 .container {
@@ -101,7 +105,7 @@ a {
 
 .img-logo {
     max-width: 500px;
-    width: 20%;
+    width: 50%;
     height: auto;
     padding: 10px;
 }
@@ -133,17 +137,25 @@ a {
     align-items: center;
 }
 
-.button-bawah:hover {
-    background: rgb(209, 207, 207);
-    color: rgb(252, 68, 44);
+    .button-bawah:hover {
+        background: rgb(209, 207, 207);
+        color: rgb(252, 68, 44);
+    }
+
+.container-2 {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 10px 0;
 }
 
 .card {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    padding: 20px;
 }
 
 .card-item {
@@ -151,6 +163,10 @@ a {
     background: antiquewhite;
     color: black;
     padding: 20px;
+}
+
+.card-title {
+    font-weight: bold;
 }
 
 @media screen and (max-width: 500px) {

@@ -104,8 +104,7 @@ a {
 }
 
 .img-logo {
-    max-width: 500px;
-    width: 50%;
+    width: 100%;
     height: auto;
     padding: 10px;
 }

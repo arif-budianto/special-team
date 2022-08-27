@@ -11,6 +11,7 @@ body {
 
 header {
   background: rgb(201, 12, 12);
+  width: 100%;
   color: white;
   display: flex;
   flex-wrap: wrap;
@@ -100,7 +101,7 @@ li > a:hover {
 
 /* Bagian Isi */
 .container {
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 50px 0;
 }
@@ -163,7 +164,7 @@ li > a:hover {
 }
 
 .container-2 {
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 10px 0;
 }

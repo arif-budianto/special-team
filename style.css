@@ -134,15 +134,17 @@ a {
 .title {
   font-size: 25px;
   font-weight: bold;
+  text-align: center;
 }
 
 .deskripsi {
   font-size: 30px;
   font-weight: bolder;
+  text-align: center;
 }
 
 .img-logo {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   padding: 10px;
 }
@@ -155,6 +157,7 @@ a {
   background: rgb(201, 12, 12);
   color: white;
   padding: 20px;
+  margin-top: 23px;
 }
 
 .margin {
@@ -191,19 +194,29 @@ a {
 
 .card {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 10px;
   padding: 20px;
 }
 
 .card-item {
-  width: 30%;
+  height: 300px;
   background: antiquewhite;
   color: black;
   padding: 20px;
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.card-item p {
+  word-wrap: break-word;
 }
 
 .card-title {

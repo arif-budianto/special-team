@@ -203,16 +203,21 @@ a {
 
 .card-item {
   height: 300px;
-  background: antiquewhite;
-  color: black;
+  background: rgb(201, 12, 12);
+  color: white;
   padding: 20px;
   flex-basis: 25%;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 10px;
+  transition: all 0.3s ease;
+}
+.card-item:hover {
+  transform: translateY(-10px);
 }
 
 .card-item p {

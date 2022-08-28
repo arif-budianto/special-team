@@ -9,7 +9,7 @@ body {
 
 /* Bagian Atas */
 
-body > header {
+body>header {
   background: rgb(201, 12, 12);
   width: 100%;
   color: white;
@@ -18,6 +18,9 @@ body > header {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  position: fixed;
+  z-index: 7;
+  top: 0;
 }
 
 .logo {
@@ -55,7 +58,7 @@ li:hover {
   transform: rotate(2deg);
 }
 
-li > a {
+li>a {
   color: rgb(228, 228, 228);
   display: flex;
   flex-direction: row;
@@ -63,7 +66,7 @@ li > a {
   gap: 5px;
 }
 
-li > a:hover {
+li>a:hover {
   color: white;
 }
 
@@ -111,6 +114,7 @@ a {
   background: white;
   color: red;
 }
+
 .tombol-btn:active {
   transform: scale(0.95);
 }
@@ -118,7 +122,7 @@ a {
 /* Bagian Isi */
 .container {
   width: 100%;
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 50px 0;
 }
 
@@ -179,9 +183,11 @@ a {
   border-radius: 5px;
   transition: all 0.3s ease 0s;
 }
+
 .button-bawah:hover {
   transform: scale(1.05);
 }
+
 .button-bawah:active {
   transform: scale(1);
 }

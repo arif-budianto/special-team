@@ -9,7 +9,7 @@ body {
 
 /* Bagian Atas */
 
-body>header {
+body > header {
   background: rgb(201, 12, 12);
   width: 100%;
   color: white;
@@ -58,7 +58,7 @@ li:hover {
   transform: rotate(2deg);
 }
 
-li>a {
+li > a {
   color: rgb(228, 228, 228);
   display: flex;
   flex-direction: row;
@@ -66,7 +66,7 @@ li>a {
   gap: 5px;
 }
 
-li>a:hover {
+li > a:hover {
   color: white;
 }
 
@@ -209,16 +209,21 @@ a {
 
 .card-item {
   height: 300px;
-  background: antiquewhite;
-  color: black;
+  background: rgb(201, 12, 12);
+  color: white;
   padding: 20px;
   flex-basis: 25%;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 10px;
+  transition: all 0.3s ease;
+}
+.card-item:hover {
+  transform: translateY(-8px);
 }
 
 .card-item p {

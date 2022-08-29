@@ -10,17 +10,19 @@ body {
 /* Bagian Atas */
 
 body > header {
-  background: rgb(201, 12, 12);
   width: 100%;
   color: white;
-  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
   position: fixed;
   z-index: 7;
   top: 0;
+}
+.nav {
+  background: rgb(201, 12, 12);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
 }
 
 .logo {
@@ -249,13 +251,17 @@ a {
 
 @media screen and (max-width: 700px) {
   /*Styling Navbar*/
-
+  .nav {
+    display: flex;
+    width: 100vw;
+  }
   .nav-menu {
     display: flex;
     align-items: center;
     position: fixed;
     right: -100%;
     top: 4.9rem;
+    padding-bottom: 1rem;
     flex-direction: column;
     background-color: rgb(167, 9, 9);
     width: 100%;
@@ -277,7 +283,7 @@ a {
   .hamburger {
     display: block;
     cursor: pointer;
-    margin: 1em;
+    margin-right: 2em;
   }
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
@@ -350,19 +356,20 @@ footer {
     display: flex;
     align-items: center;
     position: fixed;
-    right: -100%;
-    top: 4.9rem;
+    top: -100%;
+    right: 0;
     flex-direction: column;
     background-color: rgb(167, 9, 9);
     width: 100%;
     text-align: center;
     transition: 0.3s;
+    z-index: -10;
   }
   .nav-list {
     width: 300px;
   }
   .nav-menu.active {
-    right: 0;
+    top: 5.5em;
   }
   .nav-item {
     margin: 2.5rem 0;
@@ -373,7 +380,7 @@ footer {
   .hamburger {
     display: block;
     cursor: pointer;
-    margin: 1em;
+    margin: 2em;
   }
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;

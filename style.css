@@ -244,6 +244,19 @@ a {
   }
 }
 
+.footer {
+  position: absolute;
+  bottom: 100%vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgb(201, 12, 12);
+  color: white;
+  padding: 20px;
+}
+
 footer {
   flex-direction: row !important;
   justify-content: space-around !important;

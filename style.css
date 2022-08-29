@@ -10,17 +10,21 @@ body {
 /* Bagian Atas */
 
 body > header {
-  background: rgb(201, 12, 12);
-  width: 100%;
+  width: 100vw;
   color: white;
-  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
   position: fixed;
   z-index: 7;
   top: 0;
+}
+.nav {
+  width: 100%;
+  height: 80px;
+  background: rgb(201, 12, 12);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
 }
 
 .logo {
@@ -90,6 +94,19 @@ li:hover::after {
 a {
   color: rgb(228, 228, 228);
   text-decoration: none;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
 }
 
 .tombol-btn {
@@ -233,17 +250,6 @@ a {
 .card-title {
   font-weight: bold;
 }
-
-@media screen and (max-width: 700px) {
-  .card {
-    flex-direction: column;
-  }
-
-  .card-item {
-    width: 100%;
-  }
-}
-
 .footer {
   position: absolute;
   bottom: 100%vh;
@@ -266,4 +272,156 @@ footer {
 
 .footer-right ul {
   display: flex;
+}
+
+@media screen and (max-width: 700px) {
+  /*Styling Navbar*/
+  .nav {
+    display: flex;
+    width: 100vw;
+  }
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: -100%;
+    right: 0;
+    flex-direction: column;
+    background-color: rgb(167, 9, 9);
+    width: 100%;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    z-index: -10;
+    padding: 1rem;
+  }
+  .nav-list {
+    width: 300px;
+  }
+  .nav-menu.active {
+    top: 4.9em;
+  }
+  .nav-item {
+    margin: 2.5rem 0;
+  }
+  .tombol-btn {
+    margin: 0;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    margin-right: 2em;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  /* animation responsive navbar */
+  li::after {
+    content: '  ';
+    width: 0%;
+    height: 2px;
+    margin-top: 5px;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+
+  li:hover::after {
+    content: '  ';
+    width: 25%;
+    height: 2px;
+    background-color: white;
+  }
+  .nav-list:hover {
+    color: white;
+    transform: rotate(0deg);
+  }
+  .card {
+    flex-direction: column;
+  }
+
+  .card-item {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /*Styling Navbar*/
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: -100%;
+    right: 0;
+    flex-direction: column;
+    background-color: rgb(167, 9, 9);
+    width: 100%;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    padding: 1rem;
+    z-index: -10;
+  }
+  .nav-list {
+    width: 300px;
+  }
+  .nav-menu.active {
+    top: 4.9em;
+  }
+  .nav-item {
+    margin: 2.5rem 0;
+  }
+  .tombol-btn {
+    margin: 0;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    margin: 2em;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  /* animation responsive navbar */
+  li::after {
+    content: '  ';
+    width: 0%;
+    height: 2px;
+    margin-top: 5px;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+
+  li:hover::after {
+    content: '  ';
+    width: 25%;
+    height: 2px;
+    background-color: white;
+  }
+  .nav-list:hover {
+    color: white;
+    transform: rotate(0deg);
+  }
+  /*Styling card*/
+  .card {
+    flex-direction: column;
+  }
+
+  .card-item {
+    width: 100%;
+  }
 }

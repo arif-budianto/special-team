@@ -247,7 +247,7 @@ a {
 footer {
   flex-direction: row !important;
   justify-content: space-around !important;
-  padding: 30px !important;
+  padding: 10px !important;
   margin-top: 40px;
 }
 

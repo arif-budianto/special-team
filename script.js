@@ -39,3 +39,4 @@ btn.addEventListener('click',()=>{
   });
 })
 window.addEventListener('DOMContentLoaded',transitionLayer)
+console.log('haloo')

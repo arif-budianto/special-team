@@ -274,7 +274,86 @@ footer {
 .footer-right ul {
   display: flex;
 }
+.layer{
+  width: 100%;
+  height: 100vh;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-duration: 8s;
+  animation-name: transisiManual;
+ 
 
+}
+.test{
+  color: white
+  
+}
+@keyframes transisiManual {
+  0% {
+    transform: translateX(-100%);
+    background: rgb(201, 12, 12);
+  
+  }
+  25% {
+    transform: translateX(0);
+    background: rgb(201, 12, 12);
+
+  }
+  50%{
+      transform: translateX(100%);
+      background: rgb(201, 12, 12);
+    };
+    75%{
+     
+        transform: translateX(50%);
+        background: rgb(201, 12, 12);
+    }
+    80%{
+      transform: translateX(0%);
+      background: rgb(201, 12, 12);
+    }
+  100%{
+    transform: translateX(-100%);
+    background: rgb(201, 12, 12);
+  }
+ 
+} 
+.layer-mid{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+.btn-gotop{
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 30px;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  background: rgb(201, 12, 12);
+  padding: 15px;
+  border-radius: 4px;
+  animation: UpandDown 2s linear infinite;
+  transition: .2s ease-in-out;
+
+}
+@keyframes UpandDown {
+  0%{
+    transform: translateY(5px);
+  }
+  50%{
+    transform: translateY(-5px);
+  }
+  100%{
+    transform: translateY(5px);
+  }
+}
 @media screen and (max-width: 700px) {
   /*Styling Navbar*/
   .nav {

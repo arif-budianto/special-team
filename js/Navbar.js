@@ -80,6 +80,7 @@ linkJoinUs.target = '_blank';
 linkJoinUs.classList.add('tombol-btn');
 linkJoinUs.innerText = 'Join Us!';
 const joinUsLogo = document.createElement('img');
+joinUsLogo.style.marginRight = '10px';
 joinUsLogo.src = '../assets/icon/icon-follow.png';
 joinUsLogo.style.width = '2rem';
 joinUsLogo.style.height = '2rem';

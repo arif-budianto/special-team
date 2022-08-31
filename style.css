@@ -10,7 +10,7 @@ body {
 
 /* Bagian Atas */
 
-body > header {
+body>header {
   width: 100vw;
   color: white;
   flex-wrap: wrap;
@@ -19,6 +19,7 @@ body > header {
   z-index: 7;
   top: 0;
 }
+
 .nav {
   width: 100%;
   height: 80px;
@@ -44,9 +45,10 @@ body > header {
   transform: rotate(2deg);
 }
 
-nav ul {
+ul {
   display: flex;
   padding: 5px;
+  overflow: hidden;
 }
 
 li {
@@ -63,7 +65,7 @@ li:hover {
   transform: rotate(2deg);
 }
 
-li > a {
+li>a {
   color: rgb(228, 228, 228);
   display: flex;
   flex-direction: row;
@@ -71,7 +73,7 @@ li > a {
   gap: 5px;
 }
 
-li > a:hover {
+li>a:hover {
   color: white;
 }
 
@@ -101,6 +103,7 @@ a {
 .hamburger {
   display: none;
 }
+
 .bar {
   display: block;
   width: 25px;
@@ -238,88 +241,91 @@ a {
   align-items: center;
   text-align: center;
   gap: 10px;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
+
 .card-item:hover {
   transform: translateY(-8px);
 }
 
 .card-item p {
+  cursor: default;
   word-wrap: break-word;
 }
 
 .card-title {
   font-weight: bold;
 }
+
 .footer {
   position: absolute;
   bottom: 100%vh;
   width: 100vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
   background: rgb(201, 12, 12);
   color: white;
   padding: 20px;
+  margin-top: 40px;
 }
 
-footer {
+/* footer {
   flex-direction: row !important;
   justify-content: space-around !important;
   padding: 10px !important;
-  margin-top: 40px;
-}
+} */
 
 .footer-right ul {
   display: flex;
 }
-.layer {
+
+.onload-screen {
+  color: white;
+  position: fixed;
   width: 100%;
   height: 100vh;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0s;
-  animation-duration: 8s;
-  animation-name: transisiManual;
-}
-.test {
-  color: white;
-}
-@keyframes transisiManual {
-  0% {
-    transform: translateX(-100%);
-    background: rgb(201, 12, 12);
-  }
-  25% {
-    transform: translateX(0);
-    background: rgb(201, 12, 12);
-  }
-  50% {
-    transform: translateX(100%);
-    background: rgb(201, 12, 12);
-  }
-  75% {
-    transform: translateX(50%);
-    background: rgb(201, 12, 12);
-  }
-  80% {
-    transform: translateX(0%);
-    background: rgb(201, 12, 12);
-  }
-  100% {
-    transform: translateX(-100%);
-    background: rgb(201, 12, 12);
-  }
-}
-.layer-mid {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 26px;
+  animation: screenSlider 5s ease-in-out;
 }
+
+@keyframes screenSlider {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 100;
+    transform: translateX(0%);
+    background: rgb(201, 12, 12);
+  }
+
+  50% {
+    opacity: 100;
+  }
+
+  60% {
+    transform: translateX(0%);
+    background: rgb(201, 12, 12);
+  }
+
+  80% {
+    transform: translateX(50%);
+    background: rgb(201, 12, 12);
+  }
+
+  100% {
+    transform: translateX(100%);
+    background: rgb(201, 12, 12);
+  }
+}
+
 .btn-gotop {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   bottom: 20px;
   right: 30px;
@@ -333,57 +339,72 @@ footer {
   padding: 15px;
   border-radius: 4px;
   animation: UpandDown 2s linear infinite;
-  transition: 0.2s ease-in-out;
+  transition: .33s ease-in-out;
 }
+
 @keyframes UpandDown {
   0% {
     transform: translateY(5px);
   }
+
   50% {
     transform: translateY(-5px);
   }
+
   100% {
     transform: translateY(5px);
   }
 }
+
 @media screen and (max-width: 700px) {
+
   /*Styling Navbar*/
   .nav {
     display: flex;
     width: 100vw;
     position: fixed;
   }
+
   .nav-menu {
     display: flex;
     align-items: center;
     position: fixed;
-    top: -100%;
-    right: 0;
+    top: 4.9em;
+    opacity: 0;
+    height: 0%;
     flex-direction: column;
-    background-color: rgb(167, 9, 9);
+    background-color: rgb(201, 12, 12);
     width: 100%;
     text-align: center;
     transition: all 0.5s ease-in-out;
     z-index: 1;
     padding: 1rem;
   }
+
   .nav-list {
     width: 300px;
   }
+
   .nav-menu.active {
-    top: 4.9em;
+    opacity: 1;
+    background-color: rgb(167, 9, 9);
+    height: 40%;
   }
+
   .nav-item {
     margin: 2.5rem 0;
   }
+
   .tombol-btn {
     margin: 0;
   }
+
   .hamburger {
     display: block;
     cursor: pointer;
     margin-right: 2em;
   }
+
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
@@ -395,6 +416,7 @@ footer {
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+
   /* animation responsive navbar */
   li::after {
     content: '  ';
@@ -411,10 +433,12 @@ footer {
     height: 2px;
     background-color: white;
   }
+
   .nav-list:hover {
     color: white;
     transform: rotate(0deg);
   }
+
   .card {
     flex-direction: column;
   }
@@ -431,33 +455,43 @@ footer {
     display: flex;
     align-items: center;
     position: fixed;
-    top: -100%;
+    top: 4.9em;
+    opacity: 0;
+    height: 0%;
     right: 0;
     flex-direction: column;
-    background-color: rgb(167, 9, 9);
+    background-color: rgb(201, 12, 12);
     width: 100%;
     text-align: center;
     transition: all 0.5s ease-in-out;
     padding: 1rem;
     z-index: 1;
   }
+
   .nav-list {
     width: 300px;
   }
+
   .nav-menu.active {
-    top: 4.9em;
+    background-color: rgb(167, 9, 9);
+    opacity: 1;
+    height: 40%;
   }
+
   .nav-item {
     margin: 2.5rem 0;
   }
+
   .tombol-btn {
     margin: 0;
   }
+
   .hamburger {
     display: block;
     cursor: pointer;
     margin: 2em;
   }
+
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
@@ -469,6 +503,7 @@ footer {
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+
   /* animation responsive navbar */
   li::after {
     content: '  ';
@@ -485,10 +520,12 @@ footer {
     height: 2px;
     background-color: white;
   }
+
   .nav-list:hover {
     color: white;
     transform: rotate(0deg);
   }
+
   /*Styling card*/
   .card {
     flex-direction: column;
@@ -496,5 +533,9 @@ footer {
 
   .card-item {
     width: 100%;
+  }
+
+  .footer {
+    flex-direction: column;
   }
 }

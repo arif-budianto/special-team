@@ -347,7 +347,7 @@ a {
   position: fixed;
   opacity: 0;
   visibility: hidden;
-  bottom: 40px;
+  bottom: 80px;
   right: 30px;
   z-index: 99;
   font-size: 30px;

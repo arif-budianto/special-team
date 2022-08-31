@@ -17,18 +17,22 @@ ulRootEl.style.justifyContent = 'flex-end';
 const linkMenu = [
   {
     href: 'index.html',
-    icon: 'icon-home.png',
+    icon: ['fa-solid', 'fa-house'],
     alt: 'Home',
   },
   {
     href: 'about.html',
-    icon: 'icon-about.png',
+    icon: ['fa-solid', 'fa-message'],
     alt: 'About',
   },
-  { href: 'contact.html', icon: 'icon-contact.png', alt: 'Contact' },
+  {
+    href: 'contact.html',
+    icon: ['fa-solid', 'fa-address-card'],
+    alt: 'Contact',
+  },
   {
     href: 'member.html',
-    icon: 'icon-member.png',
+    icon: ['fa-solid', 'fa-users'],
     alt: 'Member',
   },
 ];
@@ -37,14 +41,15 @@ const linkMenu = [
 linkMenu.forEach((menu) => {
   const liEl = document.createElement('li');
   const linkEl = document.createElement('a');
-  const iconEl = document.createElement('img');
+  const iconEl = document.createElement('i');
 
+  linkEl.style.paddingInline = '5px';
   linkEl.href = menu.href.includes('index')
     ? '../../' + menu.href
     : '../pages/' + menu.href;
-  iconEl.src = '../assets/icon/' + menu.icon;
-  iconEl.alt = menu.alt;
-  iconEl.style.width = '20px';
+  iconEl.style.paddingInline = '10px';
+  iconEl.classList.add(...menu.icon);
+  // iconEl.style.width = '20px';
 
   const text = document.createTextNode(menu.alt);
   linkEl.prepend(text);

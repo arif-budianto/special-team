@@ -1,78 +1,19 @@
-// <header>
-//       <div class="logo">
-//         <article>
-//           <h1 hidden>Special Team</h1>
-//           <img src="../assets//image/special-team.png" alt="S.T" />
-//         </article>
-//       </div>
-//       <nav>
-//         <ul>
-//           <li>
-//             <a href="../../index.html"
-//               ><img
-//                 src="../assets/icon/icon-home.png"
-//                 alt="home"
-//                 width="20px"
-//               />Home</a
-//             >
-//           </li>
-//           <li>
-//             <a href="../pages/about.html"
-//               ><img
-//                 src="../assets/icon/icon-about.png"
-//                 alt="home"
-//                 width="20px"
-//               />About</a
-//             >
-//           </li>
-//           <li>
-//             <a href="../pages/contact.html"
-//               ><img
-//                 src="../assets/icon/icon-contact.png"
-//                 alt="home"
-//                 width="20px"
-//               />Contact</a
-//             >
-//           </li>
-//           <li>
-//             <a href="../pages/member.html"
-//               ><img
-//                 src="../assets/icon/icon-member.png"
-//                 alt="home"
-//                 width="20px"
-//               />Member</a
-//             >
-//           </li>
-//         </ul>
-//       </nav>
-//       <a
-//         class="tombol-btn"
-//         target="_blank"
-//         href="https://discord.com/invite/cuyuniverse"
-//       >
-//         <div>
-//           <img
-//             src="../icon/icon-follow.png"
-//             alt="Follow us icon"
-//             width="15"
-//             style="margin-left: 5px"
-//           />
-//           Join us
-//         </div>
-//       </a>
-//     </header>
-//
-
-const navbarContainer = document.querySelector('#navbar');
+const navbarContainer = document.getElementById('navbar');
 const headerEl = document.createElement('header');
-const logoEl = document.createElement('div');
 const navigationEl = document.createElement('nav');
+const ulRootEl = document.createElement('ul');
 
-// Khusus styling
-navigationEl.style.backgroundColor = 'red';
+// Khusus styling outer component
+navbarContainer.style.backgroundColor = 'red';
+navbarContainer.style.display = 'flex';
+navbarContainer.style.flexDirection = 'row';
+navbarContainer.style.justifyContent = 'space-between';
+navbarContainer.style.alignItems = 'center';
+ulRootEl.style.display = 'flex';
+ulRootEl.style.flexDirection = 'row';
+ulRootEl.style.justifyContent = 'flex-end';
 
 // Buat component navigasi
-const ulRootEl = document.createElement('ul');
 const linkMenu = [
   {
     href: 'index.html',
@@ -92,7 +33,7 @@ const linkMenu = [
   },
 ];
 
-// Proses rendering
+// Render menu navigasi
 linkMenu.forEach((menu) => {
   const liEl = document.createElement('li');
   const linkEl = document.createElement('a');
@@ -103,12 +44,41 @@ linkMenu.forEach((menu) => {
     : '../pages/' + menu.href;
   iconEl.src = '../assets/icon/' + menu.icon;
   iconEl.alt = menu.alt;
+  iconEl.style.width = '20px';
 
-  linkEl.appendChild(iconEl);
+  const text = document.createTextNode(menu.alt);
+  linkEl.prepend(text);
+  linkEl.prepend(iconEl);
   liEl.appendChild(linkEl);
   ulRootEl.appendChild(liEl);
-  navigationEl.appendChild(ulRootEl);
 });
+navigationEl.appendChild(ulRootEl);
 
-// Testing
-navbarContainer.appendChild(navigationEl);
+// Buat komponen logo
+const logoEl = document.createElement('div');
+logoEl.classList.add('logo');
+const article = document.createElement('article');
+const logoTitle = document.createElement('h1');
+logoTitle.hidden = true;
+logoTitle.innerHTML = 'Special Team';
+const logoImage = document.createElement('img');
+logoImage.src = '../assets/image/special-team.png';
+
+// Render komponen logo
+article.append(...[logoTitle, logoImage]);
+logoEl.append(article);
+
+// Render komponen "join us"
+const linkJoinUs = document.createElement('a');
+linkJoinUs.href = '';
+linkJoinUs.target = '_blank';
+linkJoinUs.classList.add('tombol-btn');
+linkJoinUs.innerText = 'Join Us!';
+const joinUsLogo = document.createElement('img');
+joinUsLogo.src = '../assets/icon/icon-follow.png';
+joinUsLogo.style.width = '2rem';
+joinUsLogo.style.height = '2rem';
+linkJoinUs.prepend(joinUsLogo);
+
+// Render semua
+navbarContainer.append(...[logoEl, navigationEl, linkJoinUs]);

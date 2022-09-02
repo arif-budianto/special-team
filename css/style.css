@@ -396,21 +396,27 @@ a {
     z-index: 1;
   }
 
-  .nav-list {
-    width: 300px;
+  .nav-menu > .nav-list,
+  .nav-menu > a.tombol-btn  {
+    visibility: hidden;
   }
 
   .nav-menu.active {
     opacity: 1;
+    visibility: visible;
     background-color: var(--secondary);
     height: 40%;
   }
-
+  .nav-menu.active > .nav-list {
+    visibility: visible;
+    width: 300px;
+  }
   .nav-item {
     margin: 2.5rem 0;
   }
 
-  .tombol-btn {
+  .nav-menu.active > a.tombol-btn {
+    visibility: visible;
     margin: 0;
   }
 
